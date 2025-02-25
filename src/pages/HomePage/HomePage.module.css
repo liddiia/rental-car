@@ -1,0 +1,58 @@
+.container {
+  background-image: url("../../../public/images/Picture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 68px);
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  text-align: center;
+  color: var(--white-button-text-color);
+  /* width: 784px; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  justify-content: flex-end;
+}
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: 0%;
+}
+.subTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+.viewCatalogeBtn {
+  color: var(--white-button-text-color);
+  background-color: var(--blue-default-color);
+  border: 1px solid var(--blue-default-color);
+  border-radius: 12px;
+  width: 276px;
+  height: 44px;
+   padding-top: 12px;
+      /* padding-right: 99px; */
+      padding-bottom: 12px;
+      /* padding-left: 99px; */
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-decoration: none; 
+}
+.viewCatalogeBtn:hover{
+    background-color: var(--blue-active-color);
+  border: 1px solid var(--blue-active-color);
+  transition-duration: 2500ms;
+  cursor: pointer;
+}

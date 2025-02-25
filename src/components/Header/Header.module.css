@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    align-items: center;
+  background-color: var(--light-background-color);
+  height: 68px;
+  }
+  
+   .wrapper {
+    width: 100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px 120px;
+  } 
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+  }
+  
+  .link {
+    color: var(--color-light);
+    font-size: var(--font-medium);
+    font-weight: 700;
+    text-decoration: none; 
+   
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+       
+    transition-duration: 0.2s;
+  
+  }
+  
+  .active {
+    composes: link;
+    color: var(--blue-active-color);
+      pointer-events: none;
+  }
+  
