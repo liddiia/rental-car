@@ -1,13 +1,14 @@
-import CarsList from "../components/CarsList/CarsList";
-import SearchBox from "../components/SearchBox/FilterSearch";
+ import CarsList from "../components/CarsList/CarsList";
+ import SearchBox from "../components/SearchBox/SearchBox";
 
 
 const Catalog = () => {
   return (
     <>
-   
-    <SearchBox/>
-     <CarsList/>
+
+   <SearchBox/> 
+
+    <CarsList/> 
     
     </>
   )

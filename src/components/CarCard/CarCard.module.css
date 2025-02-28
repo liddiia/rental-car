@@ -1,0 +1,76 @@
+.wrapper {
+  display: flex;
+  width: 276px;
+  height: 424px;
+}
+.carImg {
+  width: 276px;
+  height: 268px;
+  border-radius: 12px;
+}
+.carDataTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.cardTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+.carModelColor {
+  color: (--blue-default-color);
+}
+.viewMoreBtn {
+  display: flex;
+  color: var(--white-button-text-color);
+  background-color: var(--blue-default-color);
+  border: 1px solid var(--blue-default-color);
+  border-radius: 12px;
+  width: 276px;
+  height: 44px;
+  padding-top: 12px;
+justify-content: center;
+  padding-bottom: 12px;
+  
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-decoration: none;
+  margin-top: 28px;
+}
+.viewMoreBtn:hover {
+  background-color: var(--blue-active-color);
+  border: 1px solid var(--blue-active-color);
+  transition-duration: 2500ms;
+  cursor: pointer;
+}
+.carData {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--gray-text-color);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    margin-top: 8px;
+    gap: 6px;
+  }
+  
+  .carDataItem {
+    position: relative; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .carDataItem:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: var(--gray-text-color);
+    margin-left: 6px;
+  }
+  

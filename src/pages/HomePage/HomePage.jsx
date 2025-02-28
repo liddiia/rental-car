@@ -9,7 +9,7 @@ const HomePage = () => {
           Reliable and budget-friendly rentals for any journey
         </h2>
         <NavLink to="/catalog" className={css.viewCatalogeBtn}>
-          <b> View Catalog</b>
+          <p> View Catalog</p>
         </NavLink>
       </div>
     </div>
