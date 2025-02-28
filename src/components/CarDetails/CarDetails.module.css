@@ -1,0 +1,103 @@
+.container{
+    display: grid;
+    grid-template-columns: 640px 488px;
+    gap: 72px;
+}
+.mainContainer{
+    display:flex;
+justify-content: center;
+padding-top: 84px;
+padding-bottom: 104px;
+}
+
+.carImg{
+    border-radius: 18.74px;
+    margin-bottom: 40px;
+}
+.conteinerForma{
+    height: 488px;
+
+border: solid 1px var(--graylight-text-color);
+border-radius: 10px;
+gap: 24px;
+border-width: 1px;
+padding: 32px;
+
+}
+
+.titleContainer{
+    height: 180px;
+margin-bottom: 68px;
+
+}
+.title{
+  
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0%;
+ margin-bottom: 8px;
+    
+}
+.idStyle{
+    color: var(--gray-text-color);
+    padding-left: 16px;
+ 
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+
+}
+
+.locationStyle{
+   display: flex; 
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+gap:16px;
+align-items: flex-start;
+margin-bottom: 16px;
+}
+
+.rentalPriceStyle{
+    color: var(--blue-default-color);
+    margin-bottom: 32px;
+}
+.descriptionStyle{
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    
+}
+.propetiesContainer{
+    display: flex;
+    flex-direction: column;
+    gap:110px;
+    justify-content:space-between ;
+}
+.proppetiesTitle{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    margin-bottom: 20px; 
+}
+.propetiesItemCont li{
+  
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+display: flex;
+gap:8px;
+align-items: flex-start;
+margin-top: 16px;
+
+}
+/* .proppetiesContainer li p{
+    margin-left: 24px;
+} */

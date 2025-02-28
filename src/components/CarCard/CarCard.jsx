@@ -30,6 +30,7 @@ const CarCard = ({ car }) => {
             <li className={css.carDataItem}>{city}</li>
             <li className={css.carDataItem}>{country}</li>
             <li className={css.carDataItem}>{car.rentalCompany}</li>
+            <li className={css.break}></li> 
             <li className={css.carDataItem}>{car.type}</li>
             <li className={css.carDataItem}>{car.mileage}</li>
           </ul>
