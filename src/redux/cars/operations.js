@@ -1,6 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
+// 'https://car-rental-api.goit.global/cars
+// ?brand=Buick&rentalPrice=50&minMileage=100&maxMileage=100000
+// &limit=12&page=2' 
+
+
+
 export const instance = axios.create({
   baseURL: "https://car-rental-api.goit.global/",
 });
@@ -10,23 +17,23 @@ export const apiGetCars = createAsyncThunk(
   async (params = {}, thunkAPI) => {
     try {
       const defaultParams = {
-        page: 1,
         brand: "",
         rentalPrice: "",
         minMileage: "",
         maxMileage: "",
+        limit:12,
+        page: 1
       };
       const queryParams = new URLSearchParams({
         ...defaultParams,
         ...params,
       }).toString();
-
       const response = await instance.get(`/cars?${queryParams}`);
-
       return {
         items: response.data.cars,
-        page: params.page || 1,
-        totalPages: response.headers["x-total-pages"] || 10,
+        page: Number(response.data.page),
+        totalPages: Number(response.data.totalPages),
+                
       };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -7,7 +7,7 @@
     display:flex;
 justify-content: center;
 padding-top: 84px;
-padding-bottom: 104px;
+
 }
 
 .carImg{
@@ -98,6 +98,4 @@ align-items: flex-start;
 margin-top: 16px;
 
 }
-/* .proppetiesContainer li p{
-    margin-left: 24px;
-} */
+

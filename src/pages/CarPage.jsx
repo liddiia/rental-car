@@ -1,29 +1,24 @@
-import CarDetails from "../components/CarDetails/CarDetails"
-
+import { useSelector } from "react-redux";
+import CarDetails from "../components/CarDetails/CarDetails";
+import { selectIsLoading } from "../redux/cars/selectors";
+import Loader from "../components/Loader/Loader";
+import GoBackButton from "../components/GoBackButton/GoBackButton";
 
 const CarPage = () => {
+  const loading = useSelector(selectIsLoading);
+  
   return (
-    <CarDetails/>
-  )
-}
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          <CarDetails />
+          <GoBackButton/>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default CarPage;
-
-// import { useSelector } from 'react-redux';
-// import { selectSelectedCar } from '../redux/cars/selectors';
-
-// const CarDetailsComponent = () => {
-//   const selectedCar = useSelector(selectSelectedCar);
-  
-//   // Відображення даних конкретного автомобіля
-//   return selectedCar ? (
-//     <div>
-//       <h2>{selectedCar.brand} {selectedCar.model}</h2>
-//       <p>Rental Price: {selectedCar.rentalPrice}</p>
-//       {/* Інші деталі автомобіля */}
-//     </div>
-//   ) : (
-//     <p>Loading car details...</p>
-//   );
-// };
-// export default CarDetailsComponent;

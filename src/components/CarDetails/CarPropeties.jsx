@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import css from "./CarDetails.module.css";
 
 const CarPropeties = ({ car }) => {
@@ -14,7 +15,7 @@ const CarPropeties = ({ car }) => {
         <ul  className={css.propetiesItemCont} >
           {Array.isArray(car.rentalConditions) &&
             car.rentalConditions.map((item) => (
-              <li key={item}>
+              <li key={nanoid(3)}>
                 <svg width="16" height="16">
                   <use xlinkHref="/images/symbol-defs.svg#icon-check-circle"></use>
                 </svg>

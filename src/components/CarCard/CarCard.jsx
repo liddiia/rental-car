@@ -13,7 +13,6 @@ const CarCard = ({ car }) => {
     dispatch(getCarById(car.id));
   };
 
-
   return (
     <div className={css.wrapper}>
       <li>
@@ -25,17 +24,23 @@ const CarCard = ({ car }) => {
           </h3>
           <p>${car.rentalPrice}</p>
         </div>
-   
-          <ul className={css.carData}>
-            <li className={css.carDataItem}>{city}</li>
-            <li className={css.carDataItem}>{country}</li>
-            <li className={css.carDataItem}>{car.rentalCompany}</li>
-            <li className={css.break}></li> 
-            <li className={css.carDataItem}>{car.type}</li>
-            <li className={css.carDataItem}>{car.mileage}</li>
-          </ul>
-       
-        <NavLink to={`/catalog/${car.id}`} className={css.viewMoreBtn}  onClick={handleClick}>
+
+        <ul className={css.carData}>
+          <li className={css.carDataItem}>{city}</li>
+          <li className={css.carDataItem}>{country}</li>
+          <li className={css.carDataItem}>{car.rentalCompany}</li>
+          <li className={css.break}></li>
+          <li className={css.carDataItem}>{car.type}</li>
+          <li className={css.carDataItem}>
+            {car.mileage.toLocaleString("uk-UA")}
+          </li>
+        </ul>
+
+        <NavLink
+          to={`/catalog/${car.id}`}
+          className={css.viewMoreBtn}
+          onClick={handleClick}
+        >
           <p>Read more</p>
         </NavLink>
       </li>

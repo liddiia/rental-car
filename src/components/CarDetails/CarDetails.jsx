@@ -5,14 +5,14 @@ import { selectSelectedCar } from "../../redux/cars/selectors";
 import Loader from "../Loader/Loader";
 import CarAddress from "../CarCard/CarAdress";
 import CarPropeties from "./CarPropeties";
-import RentalForma from "../RentalForma/RentalForma";
 import FormatProductId from "./FormatProductId";
+import BookingForm from "../BookingForm/BookingForm";
 
 const CarDetails = () => {
   const car = useSelector(selectSelectedCar);
   if (!car) return <Loader />;
   const { city, country } = CarAddress(car.address);
-  
+  console.log("selected car: ", car)
 
   return (
     <div className={css.mainContainer}>
@@ -20,7 +20,7 @@ const CarDetails = () => {
         <li>
           <img className={css.carImg} src={car.img} alt={car.model} />
           <div className={css.conteinerForma}>
-            <RentalForma />
+            <BookingForm />
           </div>
         </li>
 

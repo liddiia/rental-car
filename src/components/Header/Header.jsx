@@ -8,7 +8,7 @@ export const Header = () => {
       <header className={css.header}>
         <div className={css.wrapper}>
           <svg width="102" height="16" className={css.logo}>
-            <use  href="../../../public/images/symbol-defs.svg#icon-RentalCar"></use>
+            <use href="/images/symbol-defs.svg#icon-RentalCar"></use>
           </svg>
 
           <nav>

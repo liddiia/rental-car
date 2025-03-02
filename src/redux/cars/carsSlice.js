@@ -15,9 +15,12 @@ const initialState = {
 const carsSlice = createSlice({
   name: "cars",
   initialState,
-   reducers: {
+  reducers: {
     setFilters(state, action) {
       state.filters = { ...state.filters, ...action.payload };
+    },
+    updateFilters: (state, action) => {
+      state.filters = action.payload;  
     },
     resetSelectedCar(state) {
       state.selectedCar = null;
@@ -31,8 +34,12 @@ const carsSlice = createSlice({
       })
       .addCase(apiGetCars.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.cars = action.payload.items;
-        state.page = action.payload.page;
+        if (Number(action.payload.page) === 1) {
+          state.cars = action.payload.items;
+        } else {
+          state.cars = [...state.cars, ...action.payload.items];
+        }
+        state.page = Number(action.payload.page); 
         state.totalPages = action.payload.totalPages;
       })
       .addCase(apiGetCars.rejected, (state, action) => {
@@ -68,5 +75,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { resetSelectedCar } = carsSlice.actions;
+export const { setFilters, updateFilters, resetSelectedCar } = carsSlice.actions;
 export default carsSlice.reducer;
