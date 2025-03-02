@@ -1,11 +1,15 @@
 # 🚗 Car Rental Search
 
-A project for searching and filtering rental cars.
+A modern car rental platform that allows users to browse, book, and manage car rentals easily.
 
 ## 🔧 Features
 - Filter by brand, price, and mileage
 - Interactive UI with dropdown lists
 - API requests to fetch car data
+
+### 🎨 UI/UX Design  
+The design prototype is available on [Figma]
+(https://www.figma.com/design/A25LdVK3gZOPJaedrkTwWQ/Rental-Car?node-id=0-1&p=f&t=RdVZ7RsULhEhfxPn-0).  
 
 
 ## 🛠️ Technologies
