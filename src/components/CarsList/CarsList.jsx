@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import CarCard from "../CarCard/CarCard";
+import { ToastContainer, toast } from 'react-toastify';
 import css from "./CarList.module.css";
 import {
   selectCars,
@@ -38,15 +39,26 @@ const CarsList = () => {
       dispatch(apiGetCars(params));
     }
   };
+  useEffect(() => {
+        if (error) {
+          toast.error(`Error: ${error}`, {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+        }
+      }, [error]);
 
-  return (
+   return (
     <>
       {loading && <Loader />}
-      {error && <p className={css.errorMessage}> Error: {error}</p>}
-
+     
       {cars.length === 0 && !loading && !error ? (
         <p className={css.noCarsMessage}>
-          No cars found matching your criteria
+          No cars found matching your criterial
         </p>
       ) : (
         <ul className={css.wrapper}>
@@ -58,6 +70,7 @@ const CarsList = () => {
       {page < totalPages && !loading && (
         <LoadMoreButton onClick={handleLoadMore} />
       )}
+       <ToastContainer />
     </>
   );
 };
@@ -66,7 +79,7 @@ export default CarsList;
 
 // //=================
 // import { useEffect } from 'react';
-// import { ToastContainer, toast } from 'react-toastify';
+// 
 // import 'react-toastify/dist/ReactToastify.css';
 // import Loader from '../Loader/Loader';
 // import CarCard from '../CarCard/CarCard';

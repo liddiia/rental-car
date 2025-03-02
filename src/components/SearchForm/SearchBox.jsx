@@ -36,10 +36,16 @@ const SearchBox = () => {
   // Add click outside listener to close dropdowns
   useEffect(() => {
     function handleClickOutside(event) {
-      if (brandDropdownRef.current && !brandDropdownRef.current.contains(event.target)) {
+      if (
+        brandDropdownRef.current &&
+        !brandDropdownRef.current.contains(event.target)
+      ) {
         setBrandDropdownOpen(false);
       }
-      if (priceDropdownRef.current && !priceDropdownRef.current.contains(event.target)) {
+      if (
+        priceDropdownRef.current &&
+        !priceDropdownRef.current.contains(event.target)
+      ) {
         setPriceDropdownOpen(false);
       }
     }
@@ -65,11 +71,11 @@ const SearchBox = () => {
       rentalPrice: values.rentalPrice || "",
       minMileage: values.minMileage || "",
       maxMileage: values.maxMileage || "",
-     page: 1,  // Reset to first page on new search
+      page: 1, // Reset to first page on new search
     };
 
     dispatch(apiGetCars(params));
-     resetForm();
+    resetForm();
   };
 
   // Convert filter values to form initial values
@@ -93,20 +99,20 @@ const SearchBox = () => {
           <Form>
             <div className={css.searchContainer}>
               <div className={css.formGroup} ref={brandDropdownRef}>
-                <label className={css.label} htmlFor="brand">
+                <div className={css.label} >
                   Car brand
-                </label>
-                <div 
+                </div>
+                <div
                   className={css.selectInput}
                   onClick={() => setBrandDropdownOpen(!brandDropdownOpen)}
                 >
                   {values.brand || "Choose a brand"}
                 </div>
-                
+
                 {brandDropdownOpen && (
                   <div className={css.dropdownMenu}>
-                    <div 
-                      className={css.dropdownItem} 
+                    <div
+                      className={css.dropdownItem}
                       onClick={() => {
                         setFieldValue("brand", "");
                         setBrandDropdownOpen(false);
@@ -129,22 +135,22 @@ const SearchBox = () => {
                   </div>
                 )}
               </div>
-              
+
               <div className={css.formGroup} ref={priceDropdownRef}>
-                <label className={css.label} htmlFor="rentalPrice">
+                <div className={css.label} >
                   Price/ 1 hour
-                </label>
-                <div 
+                </div>
+                <div
                   className={css.selectInput}
                   onClick={() => setPriceDropdownOpen(!priceDropdownOpen)}
                 >
                   {values.rentalPrice || "Choose a price"}
                 </div>
-                
+
                 {priceDropdownOpen && (
                   <div className={css.dropdownMenu}>
-                    <div 
-                      className={css.dropdownItem} 
+                    <div
+                      className={css.dropdownItem}
                       onClick={() => {
                         setFieldValue("rentalPrice", "");
                         setPriceDropdownOpen(false);
@@ -167,7 +173,7 @@ const SearchBox = () => {
                   </div>
                 )}
               </div>
-              
+
               <div className={css.mileageCont}>
                 <div className={css.mileageMinInput}>
                   <label className={css.label} htmlFor="minMileage">
@@ -195,7 +201,7 @@ const SearchBox = () => {
                   />
                 </div>
               </div>
-              
+
               <button
                 type="submit"
                 className={css.searchButton}
